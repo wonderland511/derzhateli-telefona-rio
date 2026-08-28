@@ -1,10 +1,11 @@
-# 3 держателя телефона для перелётов — Mercado Livre Brasil (Rio de Janeiro, CEP 22640-102)
+# 4 держателя телефона для перелётов — Mercado Livre Brasil (Rio de Janeiro, CEP 22640-102)
 
 Одностраничная HTML-подборка: держатели телефона для самолёта с Mercado Livre Brasil.
 
 - №1 — универсальный складной механический держатель (вариант цвета Preto);
 - №2 — ESR Travel / Airplane Magnetic Phone Holder (MagSafe);
-- №3 — ULANZI SK-20 Travel Essentials (алюминий, механический зажим) — премиум.
+- №3 — ULANZI SK-20 Travel Essentials (алюминий, механический зажим) — премиум;
+- №4 — Suporte Dobrável Rotativo Celular Do Avião (Preto), R$ 27,25, продавец YOUNENGHU (MercadoLíder), рейтинг 4,9 — данные со скриншотов карточки от 28.08.2026.
 
 ## Ссылки
 
