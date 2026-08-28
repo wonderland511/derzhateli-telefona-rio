@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 держателей телефона для перелётов — Rio de Janeiro</title>
+<style>
+  :root{
+    --bg:#fbfbfd;
+    --surface:#ffffff;
+    --text:#1d1d1f;
+    --muted:#6e6e73;
+    --line:#e3e3e6;
+    --accent:#0071e3;
+    --accent-ink:#ffffff;
+    --green:#1c8c4a;
+    --red:#c4362f;
+    --amber:#9a6a00;
+    --radius:20px;
+    --shadow:0 1px 3px rgba(0,0,0,.06), 0 12px 32px rgba(0,0,0,.06);
+    --maxw:1000px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#000000;
+      --surface:#141416;
+      --text:#f5f5f7;
+      --muted:#a1a1a6;
+      --line:#2a2a2d;
+      --accent:#0a84ff;
+      --green:#41d17f;
+      --red:#ff6b60;
+      --amber:#e5b567;
+      --shadow:0 1px 3px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Inter","Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding:76px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .kicker{
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(32px,6vw,52px);
+    line-height:1.08;
+    letter-spacing:-.02em;
+    font-weight:700;
+    margin-bottom:16px;
+  }
+  .sub{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:60ch}
+
+  .note{
+    margin-top:30px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:14px;
+    padding:18px 20px;
+    font-size:14.5px;
+    color:var(--muted);
+  }
+  .note strong{color:var(--text)}
+
+  /* ---------- Sections ---------- */
+  section{padding:52px 0}
+  h2{
+    font-size:clamp(22px,3.5vw,30px);
+    letter-spacing:-.015em;
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .criteria{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .chip{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:8px 15px;
+    font-size:13.5px;
+    color:var(--muted);
+  }
+
+  /* ---------- Table ---------- */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+  th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  td.num{font-weight:700;color:var(--accent)}
+  td.price{font-weight:600;white-space:nowrap}
+  .trust{color:var(--muted);font-size:12.5px}
+
+  /* ---------- Cards ---------- */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px;
+    margin-bottom:26px;
+    box-shadow:var(--shadow);
+  }
+  .card-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+  .badge{
+    flex:none;
+    width:40px;height:40px;border-radius:12px;
+    background:var(--accent);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:18px;
+  }
+  .card-title{font-size:clamp(19px,3vw,24px);font-weight:700;letter-spacing:-.01em}
+  .tag{
+    display:inline-block;margin-top:6px;
+    font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    color:var(--green);
+  }
+
+  .gallery{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;
+  }
+  .gallery figure{
+    margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;
+  }
+  @media (prefers-color-scheme: dark){.gallery figure{background:#0b0b0c}}
+  .gallery img{
+    display:block;width:100%;height:260px;object-fit:contain;padding:10px;
+  }
+  .gallery figcaption{
+    font-size:11.5px;color:var(--muted);padding:0 12px 10px;text-align:center;
+  }
+
+  .grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+  .spec-row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .spec-row:last-child{border-bottom:none}
+  .spec-row .k{flex:none;width:118px;color:var(--muted)}
+  .price-big{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:2px}
+  .price-hint{font-size:12px;color:var(--muted);margin-bottom:16px}
+
+  ul.pl{list-style:none;font-size:14px}
+  ul.pl li{position:relative;padding:6px 0 6px 22px}
+  ul.pl li::before{position:absolute;left:0;top:6px;font-weight:700}
+  ul.pros li::before{content:"+";color:var(--green)}
+  ul.cons li::before{content:"–";color:var(--red)}
+  .colh{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .colh.g{color:var(--green)} .colh.r{color:var(--red)}
+
+  .verdict{
+    margin-top:20px;background:var(--bg);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;font-size:13.5px;color:var(--muted);
+  }
+
+  .cta{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:20px;
+    background:var(--accent);color:var(--accent-ink);
+    text-decoration:none;font-weight:600;font-size:15px;
+    padding:13px 22px;border-radius:999px;
+    transition:transform .15s ease, filter .15s ease;
+  }
+  .cta:hover{filter:brightness(1.06)}
+  .cta svg{width:15px;height:15px}
+  .ml-name{
+    font-size:13px;color:var(--muted);margin-top:14px;
+  }
+  .ml-name b{color:var(--text);font-weight:600}
+  .reflinks{margin-top:12px;font-size:12.5px}
+  .reflinks a{color:var(--accent);text-decoration:none}
+  .reflinks a:hover{text-decoration:underline}
+
+  .pick{
+    background:linear-gradient(135deg,rgba(0,113,227,.08),rgba(0,113,227,.02));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 26px;
+    font-size:15px;
+  }
+  .pick b{color:var(--accent)}
+
+  footer{
+    padding:40px 0 60px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);text-align:center;
+  }
+
+  @media (max-width:720px){
+    .grid2{grid-template-columns:1fr}
+    .gallery img{height:210px}
+  }
+
+  /* reveal — только когда JS активен; без JS весь контент виден */
+  .js .reveal{opacity:0;transform:translateY(18px)}
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1 !important;transform:none !important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Mercado Livre Brasil • Rio de Janeiro • CEP 22640-102</div>
+    <h1>5 держателей телефона для перелётов</h1>
+    <p class="sub">Итоговый shortlist: механический зажим или MagSafe, в основном до R$100, один премиум-вариант. Отбор по репутации продавца и универсальности для iPhone и Android.</p>
+
+    <div class="note">
+      <strong>Важно о доставке.</strong> Публичная выдача Mercado Livre показывает активность товара и <em>frete grátis</em> / международную доставку там, где это указано, но точный срок и стоимость именно до CEP 22640-102 маркетплейс рассчитывает после ввода адреса. В подборке нет выдуманных дат — перед оплатой откройте карточку и проверьте строку <em>«Chegará…»</em> для вашего адреса. Ссылки ведут на поиск Mercado Livre по названию товара: выберите активное предложение нужного продавца.
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Критерии отбора</h2>
+    <div class="criteria reveal">
+      <span class="chip">Механический зажим или MagSafe</span>
+      <span class="chip">Цена в основном до R$100</span>
+      <span class="chip">Один премиум R$100–150</span>
+      <span class="chip">Хорошая репутация продавца / официальный магазин</span>
+      <span class="chip">Универсальность iPhone + Android</span>
+      <span class="chip">Складной дорожный форм-фактор</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="reveal">Быстрое сравнение</h2>
+    <div class="table-scroll reveal">
+      <table>
+        <thead>
+          <tr><th>№</th><th>Модель</th><th>Цена</th><th>Тип</th><th>Продавец / доверие</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td>Универсальный держатель для самолёта — серый</td>
+            <td class="price">R$ 46,67</td>
+            <td>Механический зажим</td>
+            <td class="trust">MercadoLíder Gold; более 1 000 продаж (по индексируемой карточке продавца)</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td>Универсальный держатель для самолёта — серебристый</td>
+            <td class="price">≈ R$ 51,10</td>
+            <td>Механический зажим</td>
+            <td class="trust">GAMEELECTRONICSBR; MercadoLíder; более 5 000 продаж</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td>LISEN MagSafe для самолёта/стола, 4–7″</td>
+            <td class="price">R$ 46,42</td>
+            <td>Магнитный MagSafe</td>
+            <td class="trust">MercadoLíder / высокая репутация в индексируемой карточке предложения</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td>ESR Travel / Airplane Magnetic Phone Holder</td>
+            <td class="price">R$ 67,28</td>
+            <td>Магнитный MagSafe</td>
+            <td class="trust">Официальный магазин ESR на Mercado Livre; рейтинг товара 5,0</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td>ULANZI SK-20 Travel Essentials — премиум</td>
+            <td class="price">R$ 146,98</td>
+            <td>Механический зажим, алюминий</td>
+            <td class="trust">nocnoc USA; MercadoLíder Platinum; более 50 000 продаж; официальный магазин</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+
+    <!-- ================= 1 ================= -->
+    <article class="card reveal">
+      <div class="card-head">
+        <div class="badge">1</div>
+        <div>
+          <div class="card-title">Универсальный держатель для самолёта — серый</div>
+          <span class="tag">Лучший универсальный до R$100</span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="img/peri_black.jpg" alt="Складной механический держатель телефона для самолёта — сложенный вид" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Типовое фото складного механического держателя этого типа</figcaption>
+        </figure>
+        <figure>
+          <img src="img/peri_use.jpg" alt="Механический держатель телефона закреплён на спинке кресла в самолёте" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>В работе: зажим на откидном столике / спинке кресла</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="price-big">R$ 46,67</div>
+          <div class="price-hint">Цена на момент проверки; Mercado может изменить её без предупреждения</div>
+          <div class="spec-row"><span class="k">Тип</span><span>Механический зажим</span></div>
+          <div class="spec-row"><span class="k">Совместимость</span><span>iPhone + Android</span></div>
+          <div class="spec-row"><span class="k">Крепление</span><span>Клипса/зажим к столику или спинке</span></div>
+          <div class="spec-row"><span class="k">Форм-фактор</span><span>Складной дорожный, регулируемая ориентация</span></div>
+          <div class="spec-row"><span class="k">Цвет</span><span>Серый</span></div>
+          <div class="spec-row"><span class="k">Продавец</span><span>MercadoLíder Gold; более 1 000 продаж</span></div>
+          <div class="spec-row"><span class="k">Размеры</span><span>Точные не опубликованы в публичном индексе</span></div>
+        </div>
+        <div>
+          <div class="colh g">Плюсы</div>
+          <ul class="pl pros">
+            <li>Обычный пружинный зажим — не привязан к MagSafe</li>
+            <li>Подходит для разных телефонов, удобно передавать между людьми</li>
+            <li>Складной формат именно под столик кресла</li>
+            <li>Сильная репутация продавца: MercadoLíder Gold</li>
+          </ul>
+          <div class="colh r" style="margin-top:14px">Минусы</div>
+          <ul class="pl cons">
+            <li>В публичном индексе нет точного диапазона ширины зажима</li>
+            <li>Для большого телефона в толстом чехле стоит проверить максимальное раскрытие в карточке</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verdict">Для разных телефонов — хороший выбор. Механический зажим не зависит от MagSafe и удобнее, если держателем пользуются iPhone, Samsung, Xiaomi, Pixel и другие модели.</div>
+
+      <div class="ml-name">Название на Mercado Livre: <b>Suporte Para Celular Para Viagens De Avião, Tamanho Cinza</b></div>
+      <a class="cta" href="https://lista.mercadolivre.com.br/suporte-celular-viagem-aviao-cinza" target="_blank" rel="noopener">
+        Открыть на Mercado Livre
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+    </article>
+
+    <!-- ================= 2 ================= -->
+    <article class="card reveal">
+      <div class="card-head">
+        <div class="badge">2</div>
+        <div>
+          <div class="card-title">Универсальный держатель для самолёта — серебристый</div>
+          <span class="tag">Хорошая альтернатива №1</span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="img/peri_white.jpg" alt="Складной механический держатель телефона, светлый корпус — сложенный вид" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Типовое фото складного механического держателя этого типа (светлый корпус)</figcaption>
+        </figure>
+        <figure>
+          <img src="img/peri_rot.jpg" alt="Двойные шарниры и зажим механического держателя телефона крупным планом" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Двойные шарниры 360° и зажим к поверхности</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="price-big">≈ R$ 51,10</div>
+          <div class="price-hint">Цена по актуальному совпадающему серебристому предложению; может измениться</div>
+          <div class="spec-row"><span class="k">Тип</span><span>Механический зажим</span></div>
+          <div class="spec-row"><span class="k">Совместимость</span><span>iPhone + Android</span></div>
+          <div class="spec-row"><span class="k">Крепление телефона</span><span>Механический зажим</span></div>
+          <div class="spec-row"><span class="k">К поверхности</span><span>Клипса</span></div>
+          <div class="spec-row"><span class="k">Форм-фактор</span><span>Складной / артикулируемый</span></div>
+          <div class="spec-row"><span class="k">Цвет</span><span>Серебристый</span></div>
+          <div class="spec-row"><span class="k">Продавец</span><span>GAMEELECTRONICSBR; MercadoLíder; более 5 000 продаж</span></div>
+        </div>
+        <div>
+          <div class="colh g">Плюсы</div>
+          <ul class="pl pros">
+            <li>Универсальная механическая фиксация — подходит не только iPhone</li>
+            <li>Продавец MercadoLíder с большим объёмом продаж</li>
+            <li>Компактная артикулируемая конструкция для путешествий</li>
+            <li>Не требует магнитного чехла или металлического кольца</li>
+          </ul>
+          <div class="colh r" style="margin-top:14px">Минусы</div>
+          <ul class="pl cons">
+            <li>Точные габариты и предел раскрытия зажима не видны в публичном индексе</li>
+            <li>Цена привязана к конкретному серебристому предложению и может меняться</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verdict">Для разных телефонов — хороший выбор. Механический зажим не зависит от MagSafe и удобнее, если держателем пользуются iPhone, Samsung, Xiaomi, Pixel и другие модели.</div>
+
+      <div class="ml-name">Название на Mercado Livre: <b>Suporte De Telefone Para Viagem De Avião, Acessórios Prata</b></div>
+      <a class="cta" href="https://lista.mercadolivre.com.br/suporte-telefone-viagem-aviao-prata" target="_blank" rel="noopener">
+        Открыть на Mercado Livre
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+    </article>
+
+    <!-- ================= 3 ================= -->
+    <article class="card reveal">
+      <div class="card-head">
+        <div class="badge">3</div>
+        <div>
+          <div class="card-title">LISEN MagSafe для самолёта/стола, 4–7″</div>
+          <span class="tag">Лучший бюджетный MagSafe</span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="img/lisen2.jpg" alt="LISEN MagSafe держатель телефона для самолёта — магнитное кольцо и складное основание" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>LISEN MagSafe: магнитная площадка и складное основание-зажим</figcaption>
+        </figure>
+        <figure>
+          <img src="img/lisen.jpg" alt="LISEN MagSafe держатель на откидном столике в самолёте, iPhone на магните" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Крепление к столику ~2,4 см, вращение 360°, карманный размер</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="price-big">R$ 46,42</div>
+          <div class="price-hint">Цена на момент проверки; в текущей выдаче указано frete grátis</div>
+          <div class="spec-row"><span class="k">Тип</span><span>Магнитный MagSafe</span></div>
+          <div class="spec-row"><span class="k">Совместимость</span><span>iPhone MagSafe; Android/non-MagSafe — через металлическое кольцо</span></div>
+          <div class="spec-row"><span class="k">Диапазон</span><span>Телефоны 4–7″</span></div>
+          <div class="spec-row"><span class="k">Поворот</span><span>360°</span></div>
+          <div class="spec-row"><span class="k">Зажим к поверхности</span><span>Ориентир до ~3 см по спецификации производителя</span></div>
+          <div class="spec-row"><span class="k">Продавец</span><span>MercadoLíder / высокая репутация карточки предложения</span></div>
+        </div>
+        <div>
+          <div class="colh g">Плюсы</div>
+          <ul class="pl pros">
+            <li>Ставится и снимается одной рукой</li>
+            <li>Компактный складной корпус, вращение 360°</li>
+            <li>Производитель заявляет крепление к поверхности примерно до 3 см</li>
+            <li>Для non-MagSafe можно использовать металлическое кольцо</li>
+          </ul>
+          <div class="colh r" style="margin-top:14px">Минусы</div>
+          <ul class="pl cons">
+            <li>Не такой универсальный «из коробки», как механический зажим</li>
+            <li>Для Android/non-MagSafe нужно кольцо/адаптер — проверьте комплектацию карточки</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verdict">Для разных телефонов — подходит, но магнитная версия наиболее удобна с MagSafe. Для Android/non-MagSafe заранее предусмотрите совместимое металлическое кольцо/чехол.</div>
+
+      <div class="ml-name">Название на Mercado Livre: <b>Suporte Portátil Celular Lisen Magsafe Avião Mesa 4-7pol</b></div>
+      <a class="cta" href="https://lista.mercadolivre.com.br/suporte-lisen-magsafe-aviao-mesa" target="_blank" rel="noopener">
+        Открыть на Mercado Livre
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <div class="reflinks">Референс производителя: <a href="https://lisen.com/products/lisen-magsafe-airplane-travel-phone-holder" target="_blank" rel="noopener">lisen.com — MagSafe Airplane Travel Phone Holder</a></div>
+    </article>
+
+    <!-- ================= 4 ================= -->
+    <article class="card reveal">
+      <div class="card-head">
+        <div class="badge">4</div>
+        <div>
+          <div class="card-title">ESR Travel / Airplane Magnetic Phone Holder</div>
+          <span class="tag">Лучший брендовый MagSafe до R$100</span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="img/esr.jpg" alt="ESR MagSafe держатель телефона для самолёта закреплён на откидном столике, iPhone на магните" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>ESR Skygrip / HaloLock: артикулируемая рука, магнитная площадка</figcaption>
+        </figure>
+        <figure>
+          <img src="img/esr2.jpg" alt="ESR магнитный держатель телефона на спинке кресла у иллюминатора" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Регулировка 360° на руке и 180° на сгибе; дорожный форм-фактор</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="price-big">R$ 67,28</div>
+          <div class="price-hint">Цена на момент проверки; в текущей выдаче указано frete grátis</div>
+          <div class="spec-row"><span class="k">Тип</span><span>Магнитный MagSafe</span></div>
+          <div class="spec-row"><span class="k">Совместимость</span><span>iPhone MagSafe; другие телефоны — с магнитным кольцом/адаптером</span></div>
+          <div class="spec-row"><span class="k">Цвет</span><span>Чёрный</span></div>
+          <div class="spec-row"><span class="k">Регулировка</span><span>Артикулируемая конструкция; ориентация телефона меняется</span></div>
+          <div class="spec-row"><span class="k">Назначение</span><span>viagem / avião</span></div>
+          <div class="spec-row"><span class="k">Продавец</span><span>Официальный магазин ESR на Mercado Livre; рейтинг товара 5,0</span></div>
+        </div>
+        <div>
+          <div class="colh g">Плюсы</div>
+          <ul class="pl pros">
+            <li>Официальный магазин ESR — меньше риска получить безымянную копию</li>
+            <li>Рейтинг товара 5,0 в текущей выдаче Mercado Livre</li>
+            <li>Удобная магнитная установка, компактный дорожный формат</li>
+            <li>Хороший выбор, если основной телефон — iPhone с MagSafe</li>
+          </ul>
+          <div class="colh r" style="margin-top:14px">Минусы</div>
+          <ul class="pl cons">
+            <li>Для Android и iPhone без MagSafe нужен совместимый магнитный адаптер/кольцо</li>
+            <li>Механический зажим универсальнее, если держателем пользуются разные люди</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verdict">Для разных телефонов — подходит, но магнитная версия наиболее удобна с MagSafe. Для Android/non-MagSafe заранее предусмотрите совместимое металлическое кольцо/чехол.</div>
+
+      <div class="ml-name">Название на Mercado Livre: <b>Suporte magnético de telefone ESR para viagens/avião, cor preta</b></div>
+      <a class="cta" href="https://lista.mercadolivre.com.br/suporte-magnetico-esr-viagem-aviao" target="_blank" rel="noopener">
+        Открыть на Mercado Livre
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <div class="reflinks">Референс производителя: <a href="https://www.esrtech.com/products/airplane-phone-holder-mount-halolock" target="_blank" rel="noopener">esrtech.com — Skygrip MagSafe Airplane Phone Holder</a></div>
+    </article>
+
+    <!-- ================= 5 ================= -->
+    <article class="card reveal">
+      <div class="card-head">
+        <div class="badge">5</div>
+        <div>
+          <div class="card-title">ULANZI SK-20 Travel Essentials — премиум</div>
+          <span class="tag">Премиум-вариант R$100–150</span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="img/ulanzi.jpg" alt="ULANZI SK-20 держатель телефона со сложенными ножками-штативом, алюминиевый корпус" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>ULANZI SK-20: алюминиевый корпус, складные ножки, карманный размер</figcaption>
+        </figure>
+        <figure>
+          <img src="img/ulanzi2.jpg" alt="Зажим и шарнир ULANZI SK-20 крупным планом" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption>Зажим ~55–90 мм, поворот 360°, держатель 180°, наклон 180°</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="price-big">R$ 146,98</div>
+          <div class="price-hint">Цена на момент проверки; международная доставка через Mercado Livre</div>
+          <div class="spec-row"><span class="k">Тип</span><span>Механический зажим, алюминий</span></div>
+          <div class="spec-row"><span class="k">Совместимость</span><span>iPhone + Android</span></div>
+          <div class="spec-row"><span class="k">Материал</span><span>Алюминиевый сплав</span></div>
+          <div class="spec-row"><span class="k">Зажим телефона</span><span>≈ 55–90 мм; описание также указывает до 99 мм</span></div>
+          <div class="spec-row"><span class="k">К поверхности</span><span>До ~3 см</span></div>
+          <div class="spec-row"><span class="k">Подвижность</span><span>Поворот 360°; держатель 180°; наклон 180°</span></div>
+          <div class="spec-row"><span class="k">Вес / сложено</span><span>≈ 130 г; ≈ 29 × 30 × 130 мм</span></div>
+          <div class="spec-row"><span class="k">Продавец</span><span>nocnoc USA; MercadoLíder Platinum; более 50 000 продаж</span></div>
+        </div>
+        <div>
+          <div class="colh g">Плюсы</div>
+          <ul class="pl pros">
+            <li>Алюминиевый корпус — потенциально долговечнее дешёвого ABS-пластика</li>
+            <li>Механический зажим универсален для iPhone и Android</li>
+            <li>Поворот основания 360°, держателя 180°, регулировка наклона</li>
+            <li>Очень сильная репутация продавца: MercadoLíder Platinum, 50k+ продаж</li>
+          </ul>
+          <div class="colh r" style="margin-top:14px">Минусы</div>
+          <ul class="pl cons">
+            <li>Самый дорогой вариант в подборке</li>
+            <li>Международная поставка может быть дольше локальной</li>
+            <li>В спецификации два значения максимальной ширины (~90 и ~99 мм) — для толстого чехла перепроверьте</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="verdict">Для разных телефонов — хороший выбор. Механический зажим не зависит от MagSafe и удобнее, если держателем пользуются iPhone, Samsung, Xiaomi, Pixel и другие модели.</div>
+
+      <div class="ml-name">Название на Mercado Livre: <b>Suporte De Telefone Ulanzi SK-20 Travel Essentials Airplane</b></div>
+      <a class="cta" href="https://lista.mercadolivre.com.br/suporte-ulanzi-sk-20-travel-essentials-aviao" target="_blank" rel="noopener">
+        Открыть на Mercado Livre
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <div class="reflinks">Референс производителя: <a href="https://www.ulanzi.com/products/sk-20-travel-phone-holder-m051" target="_blank" rel="noopener">ulanzi.com — SK-20 Travel Phone Holder</a></div>
+    </article>
+
+    <div class="pick reveal">
+      <b>Мой выбор.</b> №1 — серый универсальный механический: не зависит от MagSafe, дешёвый, легко делить между разными телефонами.
+      №5 (ULANZI SK-20) — если нужен более надёжный премиум с алюминиевым корпусом и запасом регулировок.
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Проверено: 28.08.2026 • CEP: 22640-102 • цены и наличие могут меняться.<br>
+    Фото №1–2 — типовые изображения складных механических держателей этого класса (публичная карточка Mercado Livre не даёт отдельного фото). Фото №3–5 — с сайтов производителей LISEN, ESR и ULANZI. Ссылки ведут на поиск Mercado Livre по названию товара.
+  </div>
+</footer>
+
+<script type="module">
+  try{
+    document.documentElement.classList.add('js');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(document.querySelectorAll('.reveal'));
+
+    // Страховка: если что-то пойдёт не так — принудительно показать весь контент
+    const forceShow = () => items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    const safety = setTimeout(forceShow, 1600);
+
+    if(prefersReduced){ clearTimeout(safety); forceShow(); }
+    else{
+      const { animate, inView, stagger } = await import('https://cdn.jsdelivr.net/npm/motion@11/+esm');
+      inView(items, (el) => {
+        animate(el, { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] },
+          { duration: 0.55, easing: [0.22, 1, 0.36, 1] });
+      }, { amount: 0.15 });
+
+      // на всякий: снять safety, показать то, что уже во вьюпорте
+      clearTimeout(safety);
+      requestAnimationFrame(() => {
+        items.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if(r.top < window.innerHeight && r.bottom > 0){
+            animate(el, { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] }, { duration: 0.5 });
+          }
+        });
+      });
+
+      // микроанимации карточек
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('pointerenter', () => animate(card, { transform: 'translateY(-3px)' }, { duration: 0.2 }));
+        card.addEventListener('pointerleave', () => animate(card, { transform: 'translateY(0px)' }, { duration: 0.2 }));
+      });
+      document.querySelectorAll('.cta').forEach(btn => {
+        btn.addEventListener('pointerenter', () => animate(btn, { transform: 'scale(1.03)' }, { duration: 0.15 }));
+        btn.addEventListener('pointerleave', () => animate(btn, { transform: 'scale(1)' }, { duration: 0.15 }));
+      });
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+  }
+</script>
+
+</body>
+</html>
