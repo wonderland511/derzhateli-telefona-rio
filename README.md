@@ -4,7 +4,7 @@
 
 - №1 — универсальный складной механический держатель (вариант цвета Preto);
 - №2 — ESR Travel / Airplane Magnetic Phone Holder (MagSafe);
-- №3 — ULANZI SK-20 Travel Essentials (алюминий, механический зажим) — премиум;
+- №3 — Ulanzi SK-20 Suporte Celular Tripé Portátil Para Viagem (Preto), R$ 45, рейтинг 5,0, «MAIS VENDIDO» — алюминиевый складной держатель + мини-штатив (данные со скриншотов карточки от 28.08.2026);
 - №4 — Suporte Dobrável Rotativo Celular Do Avião (Preto), R$ 27,25, продавец YOUNENGHU (MercadoLíder), рейтинг 4,9 — данные со скриншотов карточки от 28.08.2026.
 
 ## Ссылки
