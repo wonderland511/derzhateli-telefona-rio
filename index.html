@@ -63,18 +63,6 @@
   }
   .sub{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:60ch}
 
-  .note{
-    margin-top:30px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-left:3px solid var(--accent);
-    border-radius:14px;
-    padding:18px 20px;
-    font-size:14.5px;
-    color:var(--muted);
-  }
-  .note strong{color:var(--text)}
-
   /* ---------- Sections ---------- */
   section{padding:52px 0}
   h2{
@@ -200,10 +188,9 @@
     .gallery img{height:210px}
   }
 
-  /* reveal — только когда JS активен; без JS весь контент виден */
-  .js .reveal{opacity:0;transform:translateY(18px)}
+  /* Контент всегда виден. Анимация появления — только лёгкий сдвиг,
+     прозрачность не трогаем, чтобы ничего не пропадало при сбое CDN/JS. */
   @media (prefers-reduced-motion:reduce){
-    .js .reveal{opacity:1 !important;transform:none !important}
     html{scroll-behavior:auto}
   }
 </style>
@@ -214,11 +201,7 @@
   <div class="wrap">
     <div class="kicker">Mercado Livre Brasil • Rio de Janeiro • CEP 22640-102</div>
     <h1>5 держателей телефона для перелётов</h1>
-    <p class="sub">Итоговый shortlist: механический зажим или MagSafe, в основном до R$100, один премиум-вариант. Отбор по репутации продавца и универсальности для iPhone и Android.</p>
-
-    <div class="note">
-      <strong>Важно о доставке.</strong> Публичная выдача Mercado Livre показывает активность товара и <em>frete grátis</em> / международную доставку там, где это указано, но точный срок и стоимость именно до CEP 22640-102 маркетплейс рассчитывает после ввода адреса. В подборке нет выдуманных дат — перед оплатой откройте карточку и проверьте строку <em>«Chegará…»</em> для вашего адреса. Ссылки ведут на поиск Mercado Livre по названию товара: выберите активное предложение нужного продавца.
-    </div>
+    <p class="sub">Итоговый shortlist: механический зажим или MagSafe, в основном до R$100, один премиум-вариант. Отбор по репутации продавца и универсальности для iPhone и Android. Ссылки ведут на поиск Mercado Livre по названию товара — выберите активное предложение нужного продавца.</p>
   </div>
 </header>
 
@@ -598,47 +581,29 @@
 </footer>
 
 <script type="module">
+  // Весь контент виден по умолчанию из CSS. Скрипт только добавляет
+  // деликатные движения; любой сбой (нет сети/CDN) не влияет на видимость.
   try{
-    document.documentElement.classList.add('js');
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const items = Array.from(document.querySelectorAll('.reveal'));
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) throw 0;
 
-    // Страховка: если что-то пойдёт не так — принудительно показать весь контент
-    const forceShow = () => items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
-    const safety = setTimeout(forceShow, 1600);
+    const { animate, inView } = await import('https://cdn.jsdelivr.net/npm/motion@11/+esm');
 
-    if(prefersReduced){ clearTimeout(safety); forceShow(); }
-    else{
-      const { animate, inView, stagger } = await import('https://cdn.jsdelivr.net/npm/motion@11/+esm');
-      inView(items, (el) => {
-        animate(el, { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] },
-          { duration: 0.55, easing: [0.22, 1, 0.36, 1] });
-      }, { amount: 0.15 });
+    // Появление секций — только лёгкий сдвиг по Y, прозрачность не трогаем.
+    inView('.reveal', (el) => {
+      animate(el, { transform: ['translateY(16px)', 'translateY(0px)'] },
+        { duration: 0.5, easing: [0.22, 1, 0.36, 1] });
+    }, { amount: 0.1 });
 
-      // на всякий: снять safety, показать то, что уже во вьюпорте
-      clearTimeout(safety);
-      requestAnimationFrame(() => {
-        items.forEach(el => {
-          const r = el.getBoundingClientRect();
-          if(r.top < window.innerHeight && r.bottom > 0){
-            animate(el, { opacity: [0, 1], transform: ['translateY(18px)', 'translateY(0px)'] }, { duration: 0.5 });
-          }
-        });
-      });
-
-      // микроанимации карточек
-      document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('pointerenter', () => animate(card, { transform: 'translateY(-3px)' }, { duration: 0.2 }));
-        card.addEventListener('pointerleave', () => animate(card, { transform: 'translateY(0px)' }, { duration: 0.2 }));
-      });
-      document.querySelectorAll('.cta').forEach(btn => {
-        btn.addEventListener('pointerenter', () => animate(btn, { transform: 'scale(1.03)' }, { duration: 0.15 }));
-        btn.addEventListener('pointerleave', () => animate(btn, { transform: 'scale(1)' }, { duration: 0.15 }));
-      });
-    }
-  }catch(e){
-    document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
-  }
+    // Микроанимации hover.
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('pointerenter', () => animate(card, { transform: 'translateY(-3px)' }, { duration: 0.2 }));
+      card.addEventListener('pointerleave', () => animate(card, { transform: 'translateY(0px)' }, { duration: 0.2 }));
+    });
+    document.querySelectorAll('.cta').forEach(btn => {
+      btn.addEventListener('pointerenter', () => animate(btn, { transform: 'scale(1.03)' }, { duration: 0.15 }));
+      btn.addEventListener('pointerleave', () => animate(btn, { transform: 'scale(1)' }, { duration: 0.15 }));
+    });
+  }catch(e){ /* без анимаций — страница просто статична и полностью видима */ }
 </script>
 
 </body>
