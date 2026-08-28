@@ -2,7 +2,7 @@
 
 Одностраничная HTML-подборка: держатели телефона для самолёта с Mercado Livre Brasil.
 
-- №1 — универсальный складной механический держатель (вариант цвета Preto);
+- №1 — Suporte Apoio De Mesa Para Celular Alumínio Giratória 360° (SOTCAR ZJ-MT900YS), R$ 32,59, продавец SOTCAR (MercadoLíder), рейтинг 4,9 — складная настольная подставка с поворотом 360° (данные со скриншотов карточки от 28.08.2026; фото №1 — с карточки похожей модели на Kabum);
 - №2 — ESR Travel / Airplane Magnetic Phone Holder (MagSafe);
 - №3 — Ulanzi SK-20 Suporte Celular Tripé Portátil Para Viagem (Preto), R$ 45, рейтинг 5,0, «MAIS VENDIDO» — алюминиевый складной держатель + мини-штатив (данные со скриншотов карточки от 28.08.2026);
 - №4 — Suporte Dobrável Rotativo Celular Do Avião (Preto), R$ 27,25, продавец YOUNENGHU (MercadoLíder), рейтинг 4,9 — данные со скриншотов карточки от 28.08.2026.
